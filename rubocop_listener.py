@@ -73,7 +73,7 @@ class RubocopEventListener(sublime_plugin.EventListener):
         line = view.line(view.text_point(ln, 0))
         lines.append(sublime.Region(line.begin(), line.end()))
     # view.add_regions(REGIONS_ID, lines, 'rubocop.invalid', 'circle')
-  view.add_regions(REGIONS_ID, lines, get_setting('breakpoint_scope'), icon=breakpoint_active_icon, flags=sublime.HIDDEN)
+  view.add_regions(REGIONS_ID, lines, breakpoint, 'cross')
 
   def run_rubocop(self, path):
     s = sublime.load_settings(SETTINGS_FILE)
