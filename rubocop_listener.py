@@ -72,7 +72,7 @@ class RubocopEventListener(sublime_plugin.EventListener):
         view_dict[ln] = message
         line = view.line(view.text_point(ln, 0))
         lines.append(sublime.Region(line.begin(), line.end()))
-    view.add_regions(REGIONS_ID, lines, 'invalid', 'circle')
+    view.add_regions(REGIONS_ID, lines, 'message.error', 'circle')
 
   def run_rubocop(self, path):
     s = sublime.load_settings(SETTINGS_FILE)
